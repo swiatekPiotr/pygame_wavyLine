@@ -10,8 +10,8 @@ class Game():
 
         pygame.display.set_caption("Wavy Lines")
 
-        self.player1 = Player(self, (255, 100, 100), (200, 200), (5, 5))
-        self.player2 = Player(self, (100, 255, 100), (800, 400), (5, 5))
+        self.player1 = Player(self, (255, 100, 100), [200, 200], [5, 5])
+        self.player2 = Player(self, (100, 255, 100), [800, 400], [5, 5])
         # todo create random numbers of colors and position
 
         while True:
@@ -24,6 +24,7 @@ class Game():
             self.draw()
             self.move()
             pygame.display.flip()
+            pygame.display.update()
 
     def draw(self):
         self.player1.draw()
@@ -33,7 +34,6 @@ class Game():
     def move(self):
         self.player1.move()
         self.player2.move()
-
 
 
 if __name__ == "__main__":

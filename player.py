@@ -16,16 +16,17 @@ class Player():
         pressed = pygame.key.get_pressed()
         # todo create button selection for players
         if pressed[pygame.K_w]:
-            self.position += (0, -5)
+            self.position[1] -= 0.1
         if pressed[pygame.K_s]:
-            self.position += (0, 5)
+            self.position[1] += 0.1
         if pressed[pygame.K_a]:
-            self.position += (-5, 0)
+            self.position[0] -= 0.1
         if pressed[pygame.K_d]:
-            self.position += (5, 0)
+            self.position[0] += 0.1
 
 
     def draw(self):
-        pygame.draw.rect(self.game.screen, self.color, pygame.Rect((self.position, self.dimension)))
+        pygame.draw.rect(self.game.screen, self.color,
+                         pygame.Rect(self.position[0], self.position[1], self.dimension[0], self.dimension[1]))
 
 
