@@ -14,7 +14,9 @@ class Game():
         self.player2 = Player(self, (100, 255, 100), [800, 400], [5, 5])
         # todo create random numbers of colors and position
 
+        clock = pygame.time.Clock()
         while True:
+            clock.tick(100)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit(0)
